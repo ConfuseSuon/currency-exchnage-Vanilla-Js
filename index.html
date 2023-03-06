@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Convert Currency With Us Anytime from Anywhere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container ">
+      <h3 class="color-white">Currency Converter</h3>
+      <form action="">
+        <div class="input-date ">
+            <p class="color-white">Select Date</p>
+            <input type="date" class="" " name="" id=""  >
+        </div>
+         <div class="input-amount">
+            <p class="color-white" oninput="validateAmount(this)" >Enter Amount</p>
+            <input type="number" min="1"/>
+         </div>
+         <div class="select-country">
+            <div class="from">
+                <p class="color-white">From</p>
+                <!-- <img src="https://flagcdn.com/48x36/us.png" alt="flag"> -->
+                <select  class="" id="fromSelect">
+                    <option value="">Select Country</option>
+                </select>
+            </div>
+            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+            <div class="to">
+                <p class="color-white">To</p>
+                <!-- <img src="https://flagcdn.com/48x36/us.png" alt="flag"> -->
+                <select  class="" id="toSelect">
+                    <option value="">Select Country</option>
+                </select>
+            </div>
+         </div>
+         <div class="result">
+            <div class="buy-result">
+                <p class="color-white">Buying Price</p>
+                <input type="text" class="text-size color-white" id="buyingResult" disabled>
+            </div>
+            <div class="sell-result">
+                <p class="color-white">Selling Price</p>
+                <input type="text" class=" text-size color-white " id="sellingResult" disabled>
+            </div>
+         </div>
+         <div class="button-msgbox">
+           <p class="color-white" id="loader" > NRB - API  </p>
+           <button type="submit"  >Get Exchange Rate</button>
+         </div>
+        </div>
+      </form>
+    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module">
+      import moduleExecution from "./js/main.js";
+      moduleExecution()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+let objectData = JSON.parse(result);
+      let payload = objectData.data.payload;
+      let rates = payload.map((item) => {
+        return item.rates;
+      });
+    let out
+      for (let i = 0; i < rates.length; i++) {
+        rates[i].filter((item) => {
+          let currencyName = item.currency.iso3;
+          let currencyUnit = item.currency.unit;
+          let currencySell = item.sell;
+
+          if (currencyUnit != 1) {
+            currencySell = currencySell / currencyUnit;
+            currencyUnit = 1;
+          }
+          console.log(currencyName, currencySell, currencyUnit);
+        });
+      }
