@@ -15,6 +15,7 @@ export default class SelectorValue {
     this.loader = document.getElementById("loader");
     this.imgsrc = document.querySelector("img");
     this.body = document.querySelector("body");
+    this.select = document.querySelector("select");
   }
 }
 

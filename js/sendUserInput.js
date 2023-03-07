@@ -20,6 +20,7 @@ export const validationOnInput = () => {
         date = year + "-" + month + "-" + day;
         selector.input.value = date;
       }
+
       selector.inputDate.addEventListener("input", () => {
         if (
           selector.inputDate.value > date ||
@@ -37,17 +38,24 @@ export const validationOnInput = () => {
 };
 
 // recieve a propmted userInput
-const sendUserInput = async () => {
+export const sendUserInput = async () => {
   selector.form.addEventListener("submit", (e) => {
     e.preventDefault();
     let date = selector.inputDate.value;
     let amount = selector.inputAmount.value;
     let fromCountry = selector.fromSelect.value;
     let toCountry = selector.toSelect.value;
-    getExchangeRate(date, amount, fromCountry, toCountry);
+    // validation on amount and country
+    if (!selector.inputAmount.value) {
+      selector.loader.innerHTML = "Invalid Amount";
+    } else if (!selector.select.value) {
+      selector.loader.innerHTML = "Select Country";
+    } else {
+      selector.loader.innerHTML = "NRB-API";
+      getExchangeRate(date, amount, fromCountry, toCountry);
+    }
   });
 };
-sendUserInput();
 
 // selector.exchangeIcon.addEventListener("click", () => {
 //   let fromCountry = selector.fromSelect.value;
