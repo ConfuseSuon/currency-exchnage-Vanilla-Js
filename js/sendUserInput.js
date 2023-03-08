@@ -26,7 +26,7 @@ export const validationOnInput = () => {
           selector.inputDate.value > date ||
           selector.inputDate.value < "2021-01-01"
         ) {
-          selector.loader.innerHTML = "Invalid Date-Input";
+          selector.loader.innerHTML = "Invalid Date";
         } else {
           selector.loader.innerHTML = "NRB-API";
         }
@@ -48,7 +48,7 @@ export const sendUserInput = async () => {
     // validation on amount and country
     if (!selector.inputAmount.value) {
       selector.loader.innerHTML = "Invalid Amount";
-    } else if (!selector.select.value) {
+    } else if (!selector.fromSelect.value || !selector.toSelect.value) {
       selector.loader.innerHTML = "Select Country";
     } else {
       selector.loader.innerHTML = "NRB-API";
@@ -56,19 +56,3 @@ export const sendUserInput = async () => {
     }
   });
 };
-
-// selector.exchangeIcon.addEventListener("click", () => {
-//   let fromCountry = selector.fromSelect.value;
-//   let toCountry = selector.toSelect.value;
-//   let tempCode = fromCountry;
-//   fromCountry = toCountry;
-//   toCountry = tempCode;
-//   getExchangeRate(fromCountry, toCountry);
-// });
-
-// // const exchangeIcon = () => {
-// //   let tempCode = fromCurrency.value;
-// //   fromCurrency.value = toCurrency.value;
-// //   toCurrency.value = tempCode;
-// //   getExchangeRate();
-// // };
