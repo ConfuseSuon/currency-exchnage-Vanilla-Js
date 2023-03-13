@@ -11,15 +11,20 @@ export const validationOnInput = () => {
       let month = dateObj.getUTCMonth() + 1; //months from 1-12
       let day = dateObj.getUTCDate();
       let year = dateObj.getUTCFullYear();
-      let date;
-
-      if (month < 9 && day < 9) {
-        date = year + "-" + "0" + month + "-" + "0" + day;
-        selector.inputDate.value = date;
+      let mm, dd;
+      if (month < 9) {
+        mm = "0" + month;
       } else {
-        date = year + "-" + month + "-" + day;
-        selector.input.value = date;
+        mm = month;
       }
+
+      if (day < 9) {
+        dd = "0" + day;
+      } else {
+        dd = day;
+      }
+      let date = year + "-" + mm + "-" + dd;
+      selector.inputDate.value = date;
 
       selector.inputDate.addEventListener("input", () => {
         if (
